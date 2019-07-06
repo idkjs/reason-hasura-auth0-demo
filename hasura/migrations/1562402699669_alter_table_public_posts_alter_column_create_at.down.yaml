@@ -1,0 +1,6 @@
+- args:
+    sql: COMMENT ON COLUMN "public"."posts"."create_at" IS 'null'
+  type: run_sql
+- args:
+    sql: alter table "public"."posts" rename column "created_at" to "create_at";
+  type: run_sql

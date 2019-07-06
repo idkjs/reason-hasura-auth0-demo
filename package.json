@@ -1,0 +1,55 @@
+{
+  "name": "reason-hasura-demo",
+  "version": "0.1.0",
+  "private": true,
+  "keywords": ["hasura","reasonml","graphql","reason-apollo"],
+  "dependencies": {
+    "@glennsl/bs-json": "4.0.0",
+    "animate.css": "3.7.2",
+    "apollo-boost": "0.4.3",
+    "apollo-link-ws": "1.0.18",
+    "graphql": "14.4.2",
+    "react": "^16.8.6",
+    "react-apollo": "2.5.8",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "reason-apollo": "0.16.4",
+    "reason-react": "0.7.0",
+    "subscriptions-transport-ws": "0.9.16"
+  },
+  "scripts": {
+    "start": "SKIP_PREFLIGHT_CHECK=true craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "re:build": "bsb -make-world -clean-world",
+    "re:watch": "bsb -make-world -clean-world -w",
+    "rebuild-styles": "npx tailwind build ./src/styles.css -o ./src/index.css",
+    "get-schema":"yarn send-introspection-query http://localhost:8080/v1/graphql",
+    "get-schemagql": "npx fetch-graphql-schema http://localhost:8080/v1/graphql -o schema.graphql -r",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "eslintIgnore": [
+    "./src/**/*.js"
+  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "5.2.3",
+    "bs-platform": "5.0.6",
+    "graphql_ppx": "0.2.8",
+    "tailwindcss": "1.0.4"
+  }
+}
